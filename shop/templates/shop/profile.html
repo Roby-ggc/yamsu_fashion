@@ -1,0 +1,294 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Mon Profil</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="{% static 'shop/images/logo.png' %}">
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+</header>
+
+
+
+<nav>
+
+<a href="/">
+Accueil
+</a>
+
+
+<a href="{% url 'cart' %}">
+🛒 Mon panier
+</a>
+
+
+<a href="{% url 'home' %}">
+Produits
+</a>
+
+</nav>
+
+
+
+
+<div class="profile-box">
+
+
+<h1>
+👤 Mon Profil
+</h1>
+
+
+
+<p>
+<strong>Nom utilisateur :</strong>
+{{ request.user.username }}
+</p>
+
+
+
+<p>
+<strong>Téléphone :</strong>
+{{ profile.phone }}
+</p>
+
+
+
+<p>
+<strong>Adresse :</strong>
+{{ profile.address }}
+</p>
+
+
+
+
+<a class="button" href="{% url 'edit_profile' %}">
+✏️ Modifier mon profil
+</a>
+
+
+
+<hr>
+
+
+
+
+<h2>
+📦 Mes commandes
+</h2>
+
+
+
+
+{% if orders %}
+
+
+
+{% for order in orders %}
+
+
+<div class="order-card">
+
+
+
+<h3>
+Commande #{{ order.id }}
+</h3>
+
+
+
+<p>
+Date :
+{{ order.created_at }}
+</p>
+
+
+
+<p>
+Total :
+<strong>
+{{ order.total }} FCFA
+</strong>
+</p>
+
+
+
+
+<p>
+Statut :
+
+{% if order.status == "En attente" %}
+
+<span class="status pending">
+{{ order.status }}
+</span>
+
+
+{% elif order.status == "Confirmée" %}
+
+<span class="status confirmed">
+{{ order.status }}
+</span>
+
+
+{% elif order.status == "En préparation" %}
+
+<span class="status preparing">
+{{ order.status }}
+</span>
+
+
+{% elif order.status == "Livrée" %}
+
+<span class="status delivered">
+{{ order.status }}
+</span>
+
+
+{% endif %}
+
+</p>
+
+
+
+
+<h4>
+🛍️ Produits commandés :
+</h4>
+
+
+
+
+{% for item in order.items.all %}
+
+
+<div class="order-product">
+
+
+
+{% if item.product.image %}
+
+<img src="{{ item.product.image.url }}" width="80">
+
+{% endif %}
+
+
+
+<div>
+
+
+<p>
+<strong>
+{{ item.product.name }}
+</strong>
+</p>
+
+
+
+<p>
+Taille :
+{{ item.size }}
+</p>
+
+
+
+<p>
+Quantité :
+{{ item.quantity }}
+</p>
+
+
+
+<p>
+Prix :
+{{ item.price }} FCFA
+</p>
+
+
+</div>
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<p>
+Aucun produit trouvé dans cette commande.
+</p>
+
+
+
+{% endfor %}
+
+
+
+<hr>
+
+
+</div>
+
+
+
+{% endfor %}
+
+
+
+
+{% else %}
+
+
+<p>
+Vous n'avez pas encore de commande.
+</p>
+
+
+
+{% endif %}
+
+
+
+
+<a class="button" href="{% url 'home' %}">
+⬅️ Retour accueil
+</a>
+
+
+
+</div>
+
+
+
+
+<footer>
+
+<p>
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+</p>
+
+</footer>
+
+
+
+</body>
+
+</html>

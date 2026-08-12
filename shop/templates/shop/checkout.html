@@ -1,0 +1,212 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Finaliser ma commande - Yamsu Chance Fashion</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="{% static 'shop/images/logo.png' %}" alt="Logo">
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+</header>
+
+
+
+<nav>
+
+<a href="{% url 'home' %}">
+Accueil
+</a>
+
+<a href="{% url 'cart' %}">
+🛒 Mon panier
+</a>
+
+<a href="{% url 'profile' %}">
+Mon profil
+</a>
+
+</nav>
+
+
+
+
+<div class="checkout-container">
+
+
+<h2>
+🛍️ Finaliser ma commande
+</h2>
+
+
+
+<div class="checkout-products">
+
+
+<h3>
+Résumé des produits
+</h3>
+
+
+
+{% for item in products_in_cart %}
+
+
+<div class="checkout-item">
+
+
+{% if item.product.image %}
+
+<img src="{{ item.product.image.url }}">
+
+{% endif %}
+
+
+
+<div>
+
+
+<h4>
+{{ item.product.name }}
+</h4>
+
+
+<p>
+Taille : {{ item.size }}
+</p>
+
+
+<p>
+Quantité : {{ item.quantity }}
+</p>
+
+
+<p>
+Prix :
+{{ item.product.price }} FCFA
+</p>
+
+
+</div>
+
+
+</div>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+<div class="checkout-total">
+
+
+<h3>
+Total à payer :
+</h3>
+
+
+<strong>
+{{ total }} FCFA
+</strong>
+
+
+</div>
+
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+
+<label>
+Nom complet
+</label>
+
+
+<input 
+type="text"
+name="full_name"
+placeholder="Votre nom complet"
+required>
+
+
+
+<label>
+Téléphone
+</label>
+
+
+<input 
+type="text"
+name="phone"
+placeholder="Numéro WhatsApp"
+required>
+
+
+
+<label>
+Adresse de livraison
+</label>
+
+
+<textarea
+name="address"
+placeholder="Votre adresse complète"
+required></textarea>
+
+
+
+<button class="button" type="submit">
+
+✅ Confirmer la commande
+
+</button>
+
+
+
+</form>
+
+
+
+</div>
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+</p>
+
+</footer>
+
+
+
+</body>
+
+</html>

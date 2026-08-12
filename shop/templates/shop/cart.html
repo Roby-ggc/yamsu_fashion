@@ -1,0 +1,357 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Mon panier - Yamsu Chance Fashion</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="{% static 'shop/images/logo.png' %}">
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+</header>
+
+
+
+
+<nav>
+
+<a href="/">
+🏠 Accueil
+</a>
+
+
+<a href="{% url 'cart' %}">
+🛒 Panier ({{ cart_count }})
+</a>
+
+
+<a href="{% url 'profile' %}">
+👤 Mon profil
+</a>
+
+</nav>
+
+
+
+
+
+
+<div class="cart-container">
+
+
+
+<h1>
+🛒 Mon panier
+</h1>
+
+
+
+
+{% if cart_items %}
+
+
+
+
+{% for item in cart_items %}
+
+
+
+<div class="cart-card">
+
+
+
+
+
+{% if item.product.image %}
+
+
+<img 
+
+src="{{ item.product.image.url }}"
+
+class="cart-image">
+
+
+{% endif %}
+
+
+
+
+
+
+<div class="cart-details">
+
+
+<h2>
+
+{{ item.product.name }}
+
+</h2>
+
+
+
+<p>
+
+Catégorie :
+{{ item.product.category }}
+
+</p>
+
+
+
+
+<p>
+
+Taille :
+
+<strong>
+{{ item.size }}
+</strong>
+
+</p>
+
+
+
+
+
+<p>
+
+Prix :
+
+{{ item.product.price }} FCFA
+
+</p>
+
+
+
+
+
+<div class="quantity">
+
+
+<a 
+
+class="quantity-btn"
+
+href="{% url 'decrease_cart' item.key %}">
+
+−
+
+</a>
+
+
+
+<span>
+
+{{ item.quantity }}
+
+</span>
+
+
+
+
+<form method="POST" action="{% url 'add_to_cart' id=item.product.id %}">
+
+
+{% csrf_token %}
+
+<input type="hidden" name="size" value="{{ item.size }}">
+
+
+<button class="quantity-btn">
+
++
+
+</button>
+
+
+</form>
+
+
+
+</div>
+
+
+
+
+
+<p class="subtotal">
+
+Sous-total :
+
+<strong>
+
+{{ item.item_total }} FCFA
+
+</strong>
+
+
+</p>
+
+
+
+
+
+<a 
+
+class="delete-btn"
+
+href="{% url 'remove_from_cart' item.key %}">
+
+🗑 Supprimer
+
+</a>
+
+
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+{% endfor %}
+
+
+
+
+
+
+<div class="cart-summary">
+
+
+
+<h2>
+
+Résumé de la commande
+
+</h2>
+
+
+
+
+<h1>
+
+{{ total }} FCFA
+
+</h1>
+
+
+
+
+
+<a 
+
+class="checkout-button"
+
+href="{% url 'checkout' %}">
+
+✅ Passer la commande
+
+</a>
+
+
+
+
+
+<br><br>
+
+
+
+
+
+<a 
+
+class="whatsapp-order"
+
+href="https://wa.me/2349165391998?text={{ whatsapp_message }}"
+
+target="_blank">
+
+
+📲 Commander par WhatsApp
+
+
+</a>
+
+
+
+
+</div>
+
+
+
+
+
+{% else %}
+
+
+
+<div class="empty-cart">
+
+<h2>
+
+Votre panier est vide 🛒
+
+</h2>
+
+
+<a class="button" href="/">
+
+Continuer les achats
+
+</a>
+
+
+</div>
+
+
+
+
+{% endif %}
+
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+
+</p>
+
+</footer>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>{{ product.name }} - Yamsu Chance Fashion</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="{% static 'shop/images/logo.png' %}">
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+</header>
+
+
+
+
+
+<nav>
+
+
+<a href="/">
+🏠 Accueil
+</a>
+
+
+
+<a href="{% url 'cart' %}">
+🛒 Mon panier ({{ cart_count }})
+</a>
+
+
+
+
+{% if user.is_authenticated %}
+
+
+<a href="{% url 'profile' %}">
+👤 Mon profil
+</a>
+
+
+
+<a href="{% url 'logout' %}">
+🚪 Déconnexion
+</a>
+
+
+
+{% else %}
+
+
+<a href="{% url 'login' %}">
+Connexion
+</a>
+
+
+{% endif %}
+
+
+
+</nav>
+
+
+
+
+
+
+
+
+<div class="product-detail">
+
+
+
+
+
+
+<div class="product-image-box">
+
+
+{% if product.available %}
+
+<span class="badge">
+Disponible
+</span>
+
+{% endif %}
+
+
+
+
+{% if product.image %}
+
+
+<img 
+
+src="{{ product.image.url }}"
+
+class="detail-image"
+
+alt="{{ product.name }}">
+
+
+
+{% endif %}
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="product-info">
+
+
+
+<h1>
+
+{{ product.name }}
+
+</h1>
+
+
+
+
+
+<h2 class="price">
+
+{{ product.price }} FCFA
+
+</h2>
+
+
+
+
+
+
+<p>
+
+Catégorie :
+
+<strong>
+{{ product.category }}
+</strong>
+
+</p>
+
+
+
+
+
+
+<p>
+
+{{ product.description }}
+
+</p>
+
+
+
+
+
+
+
+{% if product.stock > 0 %}
+
+
+<p class="stock">
+
+✅ Stock disponible :
+{{ product.stock }}
+
+</p>
+
+
+
+{% else %}
+
+
+<p class="out-stock">
+
+❌ Rupture de stock
+
+</p>
+
+
+
+{% endif %}
+
+
+
+
+
+
+
+<form method="POST" action="{% url 'add_to_cart' id=product.id %}">
+
+
+{% csrf_token %}
+
+
+
+
+<label>
+
+Choisir la taille :
+
+</label>
+
+
+
+<br>
+
+
+
+<select name="size">
+
+
+
+{% for size in sizes %}
+
+
+<option value="{{ size }}">
+
+{{ size }}
+
+</option>
+
+
+
+{% empty %}
+
+
+<option value="Standard">
+
+Standard
+
+</option>
+
+
+
+{% endfor %}
+
+
+
+</select>
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+{% if product.stock > 0 %}
+
+
+<button 
+
+class="buy-button"
+
+type="submit">
+
+
+🛒 Ajouter au panier
+
+
+</button>
+
+
+
+{% endif %}
+
+
+
+
+
+</form>
+
+
+
+
+
+
+
+<br>
+
+
+
+
+
+<a 
+
+href="{% url 'cart' %}"
+
+class="cart-button">
+
+
+🛒 Voir mon panier
+
+
+</a>
+
+
+
+
+
+
+
+<br><br>
+
+
+
+
+
+
+
+<a
+
+class="button"
+
+target="_blank"
+
+<a 
+class="whatsapp-order"
+target="_blank"
+href="https://wa.me/2349165391998?text=Bonjour%20Yamsu%20Chance%20Fashion%0A%0AJe%20suis%20intéressé%20par%20:%20{{ product.name }}%0A%0APrix%20:%20{{ product.price }}%20FCFA">
+
+📲 Commander par WhatsApp
+
+</a>
+
+📲 Commander par WhatsApp
+
+
+</a>
+
+
+
+
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+
+</p>
+
+
+</footer>
+
+
+
+
+
+</body>
+
+</html>

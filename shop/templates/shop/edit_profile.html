@@ -1,0 +1,122 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Modifier mon profil</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="{% static 'shop/images/logo.png' %}">
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+</header>
+
+
+<nav>
+
+<a href="/">
+Accueil
+</a>
+
+<a href="{% url 'cart' %}">
+🛒 Mon panier
+</a>
+
+<a href="{% url 'profile' %}">
+👤 Mon profil
+</a>
+
+<a href="{% url 'logout' %}">
+Déconnexion
+</a>
+
+</nav>
+
+
+
+<div class="profile-box">
+
+
+<h2>
+✏️ Modifier mon profil
+</h2>
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+<label>
+Téléphone :
+</label>
+
+<br>
+
+<input 
+type="text" 
+name="phone"
+value="{{ profile.phone }}"
+>
+
+
+<br><br>
+
+
+<label>
+Adresse :
+</label>
+
+<br>
+
+
+<textarea name="address">{{ profile.address }}</textarea>
+
+
+<br><br>
+
+
+<button class="button" type="submit">
+Enregistrer
+</button>
+
+
+</form>
+
+
+
+<a class="button" href="{% url 'profile' %}">
+⬅️ Retour profil
+</a>
+
+
+</div>
+
+
+
+<footer>
+
+<p>
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+</p>
+
+</footer>
+
+
+</body>
+
+</html>

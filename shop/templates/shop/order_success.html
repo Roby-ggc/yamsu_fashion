@@ -1,0 +1,282 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>
+Commande confirmée - Yamsu Chance Fashion
+</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="{% static 'shop/images/logo.png' %}">
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+</header>
+
+
+
+
+<nav>
+
+<a href="{% url 'home' %}">
+🏠 Accueil
+</a>
+
+
+<a href="{% url 'profile' %}">
+👤 Mon profil
+</a>
+
+
+</nav>
+
+
+
+
+
+
+
+<div class="success-box">
+
+
+<h1>
+🎉 Commande confirmée !
+</h1>
+
+
+
+<p>
+Merci pour votre confiance chez Yamsu Chance Fashion.
+</p>
+
+
+
+
+<h2>
+Commande #{{ order.id }}
+</h2>
+
+
+
+
+
+<div class="order-info">
+
+
+<p>
+Nom :
+<strong>
+{{ order.full_name }}
+</strong>
+</p>
+
+
+
+<p>
+Téléphone :
+<strong>
+{{ order.phone }}
+</strong>
+</p>
+
+
+
+
+<p>
+Adresse :
+<strong>
+{{ order.address }}
+</strong>
+</p>
+
+
+
+
+<p>
+Total :
+<strong>
+{{ order.total }} FCFA
+</strong>
+</p>
+
+
+
+
+<p>
+Statut :
+<strong>
+{{ order.status }}
+</strong>
+</p>
+
+
+</div>
+
+
+
+
+
+
+<h2>
+📦 Produits commandés
+</h2>
+
+
+
+
+{% for item in order.items.all %}
+
+
+
+<div class="order-product">
+
+
+
+{% if item.product.image %}
+
+<img 
+src="{{ item.product.image.url }}"
+width="100">
+
+{% endif %}
+
+
+
+<p>
+<strong>
+{{ item.product.name }}
+</strong>
+</p>
+
+
+<p>
+Taille :
+{{ item.size }}
+</p>
+
+
+<p>
+Quantité :
+{{ item.quantity }}
+</p>
+
+
+<p>
+Prix :
+{{ item.price }} FCFA
+</p>
+
+
+
+</div>
+
+
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+<br>
+
+
+
+
+<a
+
+class="button"
+
+href="{% url 'download_order_pdf' order.id %}">
+
+📄 Télécharger mon bon de commande
+
+</a>
+
+
+
+
+
+<br><br>
+
+
+
+
+
+<a
+
+class="button"
+
+href="{% url 'home' %}">
+
+🛍️ Continuer mes achats
+
+</a>
+
+
+
+
+
+<br><br>
+
+
+
+
+
+<a
+
+class="whatsapp-order"
+
+target="_blank"
+
+href="https://wa.me/2349165391998?text=Bonjour%20Yamsu%20Chance%20Fashion%2C%20ma%20commande%20%23{{ order.id }}%20est%20confirmée.">
+
+📲 Contacter la boutique
+
+</a>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+</p>
+
+
+</footer>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Connexion - Yamsu Chance Fashion</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+</header>
+
+
+
+<h2>
+Se connecter
+</h2>
+
+
+
+
+<form method="POST">
+
+{% csrf_token %}
+
+
+<label>
+Nom d'utilisateur
+</label>
+
+<br>
+
+<input type="text" name="username" required>
+
+
+<br><br>
+
+
+<label>
+Mot de passe
+</label>
+
+<br>
+
+<input type="password" name="password" required>
+
+
+<br><br>
+
+
+<button type="submit">
+Connexion
+</button>
+
+
+</form>
+
+
+
+
+<p>
+
+Pas encore de compte ?
+
+<a href="{% url 'register' %}">
+S'inscrire
+</a>
+
+</p>
+
+
+
+<footer>
+
+<p>
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+</p>
+
+</footer>
+
+
+
+</body>
+
+</html>

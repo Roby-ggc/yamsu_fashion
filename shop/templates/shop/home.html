@@ -1,0 +1,451 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Yamsu Chance Fashion</title>
+
+<link rel="stylesheet" href="{% static 'shop/style.css' %}">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<img src="{% static 'shop/images/logo.png' %}" alt="Logo">
+
+
+<div>
+
+<h1>
+Yamsu Chance Fashion
+</h1>
+
+<p>
+La mode, l'élégance et la qualité à votre portée ✨
+</p>
+
+</div>
+
+
+</header>
+
+
+
+
+
+<!-- MENU PRINCIPAL -->
+
+<nav>
+
+
+<a href="/">
+🏠 Accueil
+</a>
+
+
+<a href="{% url 'cart' %}">
+🛒 Panier ({{ cart_count }})
+</a>
+
+
+
+{% if user.is_authenticated %}
+
+
+<a href="{% url 'profile' %}">
+👤 Mon profil
+</a>
+
+
+<a href="{% url 'logout' %}">
+🚪 Déconnexion
+</a>
+
+
+
+{% else %}
+
+
+<a href="{% url 'register' %}">
+Créer un compte
+</a>
+
+
+<a href="{% url 'login' %}">
+Connexion
+</a>
+
+
+
+{% endif %}
+
+
+</nav>
+
+
+
+
+
+<!-- CATEGORIES PRODUITS -->
+
+<div class="categories-menu">
+
+
+<a href="{% url 'hommes' %}">
+👔 Hommes
+</a>
+
+
+<a href="{% url 'femmes' %}">
+👗 Femmes
+</a>
+
+
+<a href="{% url 'enfants' %}">
+🧒 Enfants
+</a>
+
+
+<a href="{% url 'electromenager' %}">
+🏠 Électroménager
+</a>
+
+
+<a href="{% url 'autres' %}">
+📦 Autres
+</a>
+
+
+</div>
+
+
+
+
+
+
+
+<!-- RECHERCHE -->
+
+
+<form method="GET" action="/" class="search-box">
+
+
+<input
+
+type="text"
+
+name="search"
+
+placeholder="Rechercher un produit..."
+
+value="{{ request.GET.search }}">
+
+
+
+<button type="submit">
+
+🔍 Rechercher
+
+</button>
+
+
+</form>
+
+
+
+
+
+
+
+<!-- HERO -->
+
+
+<section class="hero">
+
+
+<div class="hero-content">
+
+
+<h1>
+Bienvenue chez Yamsu Chance Fashion
+</h1>
+
+
+<p>
+Découvrez nos vêtements, chaussures et accessoires
+avec qualité et élégance.
+</p>
+
+
+
+<a href="#produits" class="hero-button">
+
+🛒 Acheter maintenant
+
+</a>
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+
+
+<h2 id="produits">
+
+Nos produits
+
+</h2>
+
+
+
+
+
+
+<div class="products">
+
+
+
+{% for product in products %}
+
+
+
+<div class="card">
+
+
+
+{% if product.available %}
+
+
+<span class="badge">
+
+Disponible
+
+</span>
+
+
+{% else %}
+
+
+<span class="badge out-stock">
+
+Rupture
+
+</span>
+
+
+{% endif %}
+
+
+
+
+
+
+
+{% if product.image %}
+
+
+<img
+
+src="{{ product.image.url }}"
+
+alt="{{ product.name }}"
+
+class="product-image">
+
+
+{% endif %}
+
+
+
+
+
+
+
+<h3>
+
+{{ product.name }}
+
+</h3>
+
+
+
+
+
+
+
+<p class="price">
+
+{{ product.price }} FCFA
+
+</p>
+
+
+
+
+
+
+
+<p>
+
+Catégorie :
+
+<strong>
+
+{{ product.category }}
+
+</strong>
+
+</p>
+
+
+
+
+
+
+
+{% if product.sizes %}
+
+
+<p>
+
+Tailles :
+
+{{ product.sizes }}
+
+</p>
+
+
+{% endif %}
+
+
+
+
+
+
+
+
+{% if product.stock > 0 %}
+
+
+<p class="stock">
+
+Stock disponible :
+{{ product.stock }}
+
+</p>
+
+
+{% else %}
+
+
+<p class="out-stock">
+
+Rupture de stock
+
+</p>
+
+
+{% endif %}
+
+
+
+
+
+
+
+<a
+
+class="button"
+
+href="{% url 'product_detail' id=product.id %}">
+
+
+👁️ Voir le produit
+
+
+</a>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+{% empty %}
+
+
+<p>
+
+Aucun produit trouvé.
+
+</p>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+
+
+
+
+<a
+
+href="https://wa.me/2349165391998?text=Bonjour%20Yamsu%20Chance%20Fashion"
+
+class="whatsapp-float"
+
+target="_blank">
+
+
+🟢
+
+
+</a>
+
+
+
+
+
+
+
+<footer>
+
+
+<p>
+
+© 2026 Yamsu Chance Fashion - Tous droits réservés.
+
+</p>
+
+
+</footer>
+
+
+
+
+
+</body>
+
+</html>
