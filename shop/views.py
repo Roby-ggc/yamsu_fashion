@@ -1074,11 +1074,12 @@ from django.core.management import call_command
 from django.conf import settings
 import os
 
+
 def load_products(request):
     file_path = os.path.join(settings.BASE_DIR, "products.json")
 
-    if os.path.exists(file_path):
+    try:
         call_command("loaddata", file_path)
-        return HttpResponse("Produits importés avec succès")
-    else:
-        return HttpResponse("products.json introuvable")
+        return HttpResponse("Import réussi")
+    except Exception as e:
+        return HttpResponse(str(e), status=500)
