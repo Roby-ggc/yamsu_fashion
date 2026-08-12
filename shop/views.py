@@ -1076,10 +1076,13 @@ import os
 
 
 def load_products(request):
-    file_path = os.path.join(settings.BASE_DIR, "products.json")
+    file_path = os.path.join(
+        settings.BASE_DIR,
+        "products_only.json"
+    )
 
     try:
         call_command("loaddata", file_path)
-        return HttpResponse("Import réussi")
+        return HttpResponse("Import des produits réussi")
     except Exception as e:
         return HttpResponse(str(e), status=500)
