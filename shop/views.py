@@ -1035,3 +1035,16 @@ def download_order_pdf(request, order_id):
 
 
     return response
+from django.contrib.auth.models import User
+from django.http import HttpResponse
+
+def create_admin(request):
+    if not User.objects.filter(username="roby").exists():
+        User.objects.create_superuser(
+            username="roby",
+            email="gayacamlot@gmail.com",
+            password="Roby-gg1"
+        )
+        return HttpResponse("Admin créé")
+    else:
+        return HttpResponse("Admin existe déjà")
