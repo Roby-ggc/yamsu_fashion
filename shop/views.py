@@ -1,4 +1,3 @@
-from django.core.serializers import json
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Product, CustomerProfile, Order, OrderItem
 from django.contrib.auth import authenticate, login, logout
@@ -1050,10 +1049,10 @@ def create_admin(request):
     else:
         return HttpResponse("Admin existe déjà")
     import json
-from django.core.management import call_command
+import os
+from django.core import serializers
 from django.http import HttpResponse
 from django.conf import settings
-import os
 
 
 def load_products(request):
@@ -1064,11 +1063,9 @@ def load_products(request):
     )
 
     with open(file_path, "r", encoding="utf-8") as file:
-        data = json.load(file)
+        data = file.read()
 
-    from django.core import serializers
-
-    for obj in serializers.deserialize("json", json.dumps(data)):
+    for obj in serializers.deserialize("json", data):
         obj.save()
 
     return HttpResponse("Produits importés avec succès")
