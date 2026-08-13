@@ -7,7 +7,7 @@ from reportlab.pdfgen import canvas
 from reportlab.lib.pagesizes import A4
 import urllib.parse
 from django.urls import reverse
-
+from django.core import serializers
 
 
 # =========================
