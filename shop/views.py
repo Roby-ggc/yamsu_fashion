@@ -1039,20 +1039,27 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse
 
 def create_admin(request):
-    if not User.objects.filter(username="roby").exists():
-        User.objects.create_superuser(
-            username="roby",
-            email="gayacamlot@gmail.com",
-            password="Roby-gg1"
-        )
-        return HttpResponse("Admin créé")
+    username = "roby"
+    password = "Roby-gg1"
+
+    user = User.objects.filter(username=username).first()
+
+    if user:
+        user.set_password(password)
+        user.is_superuser = True
+        user.is_staff = True
+        user.save()
+
+        return HttpResponse("Mot de passe admin réinitialisé")
+    
     else:
-        return HttpResponse("Admin existe déjà")
-    import json
-import os
-from django.core import serializers
-from django.http import HttpResponse
-from django.conf import settings
+        User.objects.create_superuser(
+            username=username,
+            email="gayacamlot@gmail.com",
+            password=password
+        )
+
+        return HttpResponse("Admin créé")
 
 
 def load_products(request):
