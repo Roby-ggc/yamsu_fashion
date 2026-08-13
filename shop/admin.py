@@ -4,7 +4,6 @@ from django.utils.html import format_html
 from .models import Product, CustomerProfile, Order, OrderItem
 
 
-
 # ==========================
 # PRODUITS
 # ==========================
@@ -21,12 +20,10 @@ class ProductAdmin(admin.ModelAdmin):
         'available'
     )
 
-
     list_filter = (
         'category',
         'available'
     )
-
 
     search_fields = (
         'name',
@@ -36,7 +33,7 @@ class ProductAdmin(admin.ModelAdmin):
 
     def image_preview(self, obj):
 
-        if obj.image:
+        if obj.image and hasattr(obj.image, 'url'):
 
             return format_html(
                 '<img src="{}" width="60" height="60" style="object-fit:contain;border-radius:8px;">',
@@ -47,8 +44,6 @@ class ProductAdmin(admin.ModelAdmin):
 
 
     image_preview.short_description = "Image"
-
-
 
 
 
@@ -65,13 +60,10 @@ class CustomerProfileAdmin(admin.ModelAdmin):
         'address'
     )
 
-
     search_fields = (
         'user__username',
         'phone'
     )
-
-
 
 
 
@@ -97,7 +89,7 @@ class OrderItemInline(admin.TabularInline):
 
     def image_preview(self, obj):
 
-        if obj.product and obj.product.image:
+        if obj.product and obj.product.image and hasattr(obj.product.image, 'url'):
 
             return format_html(
                 '<img src="{}" width="60" height="60" style="object-fit:contain;border-radius:8px;">',
@@ -108,8 +100,6 @@ class OrderItemInline(admin.TabularInline):
 
 
     image_preview.short_description = "Image"
-
-
 
 
 
@@ -150,8 +140,6 @@ class OrderAdmin(admin.ModelAdmin):
 
 
 
-
-
 # ==========================
 # ORDER ITEMS
 # ==========================
@@ -177,7 +165,7 @@ class OrderItemAdmin(admin.ModelAdmin):
 
     def image_preview(self, obj):
 
-        if obj.product and obj.product.image:
+        if obj.product and obj.product.image and hasattr(obj.product.image, 'url'):
 
             return format_html(
                 '<img src="{}" width="60" height="60" style="object-fit:contain;border-radius:8px;">',

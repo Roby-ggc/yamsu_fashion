@@ -1,77 +1,30 @@
 [
-{
-  "model": "shop.product",
-  "pk": 1,
-  "fields": {
-    "name": "Timberland",
-    "category": "Hommes",
-    "price": "15000.00",
-    "description": "Bottes Timberland 6-Inch Homme - Cuir Nubuck  \r\nLãind┌modable. Robuste, styl┌e et confortable.  \r\nCon■ue en cuir nubuck imperm┌able avec coutures 100% ┌tanches, et semelle antichoc pour un confort toute la journ┌e.  \r\nId┌ale pour le travail, la ville et les sorties. Une valeur s╣re qui traverse les ann┌es.  \r\nCouleur : Jaune miel  \r\nPointures disponibles : 40 au 45  \r\nLivraison disponible partout.",
-    "image": "products/IMG-20260622-WA0173.jpg",
-    "sizes": "",
-    "stock": 72,
-    "available": true
+  {
+    "model": "shop.product",
+    "pk": 1,
+    "fields": {
+      "name": "Timberland",
+      "category": "Hommes",
+      "price": "15000.00",
+      "description": "Bottes Timberland 6-Inch Homme - Cuir Nubuck\nL'indemodable. Robuste, style et confortable.\nConcue en cuir nubuck impermeable avec coutures 100% etanches.\nCouleur : Jaune miel\nPointures disponibles : 40 au 45\nLivraison disponible partout.",
+      "image": "products/IMG-20260622-WA0173.jpg",
+      "sizes": "",
+      "stock": 72,
+      "available": true
+    }
+  },
+  {
+    "model": "shop.product",
+    "pk": 2,
+    "fields": {
+      "name": "Louis Vuitton",
+      "category": "Hommes",
+      "price": "13500.00",
+      "description": "Sneakers Louis Vuitton Homme - Noir et Blanc\nDesign premium et audacieux pour homme.\nCuir de qualite, semelle epaisse et confortable.\nPointures disponibles : 40 au 45\nLivraison disponible partout.",
+      "image": "products/IMG-20260718-WA0053.jpg",
+      "sizes": "",
+      "stock": 31,
+      "available": true
+    }
   }
-},
-{
-  "model": "shop.product",
-  "pk": 2,
-  "fields": {
-    "name": "Louis Vuitton",
-    "category": "Hommes",
-    "price": "13500.00",
-    "description": "Sneakers Louis Vuitton Homme - Noir et Blanc  \r\nDesign premium et audacieux pour lãhomme qui veut se d┌marquer.  \r\nCuir de qualit┌, semelle ┌paisse et confortable, finitions soign┌es avec logo LV.  \r\nParfaites pour un look streetwear, casual ou habill┌.  \r\nConfort toute la journ┌e et style garanti.  \r\nCouleur : Blanc / Noir  \r\nPointures disponibles : 40 au 45  \r\nLivraison disponible partout.",
-    "image": "products/IMG-20260718-WA0053.jpg",
-    "sizes": "",
-    "stock": 31,
-    "available": true
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 3,
-  "fields": {
-    "name": "Soulier",
-    "category": "Hommes",
-    "price": "8000.00",
-    "description": "Noir Motif Monogramme  \r\nEl┌gance et raffinement pour lãhomme moderne.  \r\nCuir verni brillant, d┌tail boucle dor┌e, et motif monogramme styl┌.  \r\nId┌als pour c┌r┌monie, bureau, ou sortie chic. Confort et classe r┌unis.  \r\nCouleur : Noir  \r\nPointures disponibles : 40 au 45  \r\nLivraison disponible partout.",
-    "image": "products/IMG-20260613-WA0124.jpg",
-    "sizes": "",
-    "stock": 74,
-    "available": true
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 4,
-  "fields": {
-    "name": "Talon",
-    "category": "Femmes",
-    "price": "13500.00",
-    "description": "Mules Femme Ë Talon Carr┌ - Noir Strass  \r\nStyle et ┌l┌gance pour vos sorties.  \r\nMatiÌre velours, talon carr┌ ┌pais confortable, et d┌tails strass sur la bride.  \r\nParfaites pour habiller une robe, un jean ou une tenue de soir┌e.  \r\nCouleur : Noir  \r\nPointures disponibles : 36 au 41  \r\nLivraison disponible partout.",
-    "image": "products/IMG-20260615-WA0154.jpg",
-    "sizes": "",
-    "stock": 63,
-    "available": true
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 5,
-  "fields": {
-    "name": "Baggy Jeans",
-    "category": "Femmes",
-    "price": "10000.00",
-    "description": "Jean Femme Baggy Taille Haute - Bleu \r\nAdoptez la tendance du denim large avec ce jean femme baggy taille haute. Sa coupe droite et fluide galbe la taille tout en offrant un confort optimal toute la journ┌e.\r\nLe d┌lavage strat┌gique sur l'avant apporte une touche moderne et d┌contract┌e.\r\nParfait Ë associer avec un talon carr┌ pour une sortie ou des baskets pour un style streetwear.",
-    "image": "products/IMG-20260615-WA0149.jpg",
-    "sizes": "",
-    "stock": 110,
-    "available": true
-  }
-},
-{
-  "model": "shop.product",
-  "pk": 6,
-  "fields": {
-    "name": "Fer Ë Repasser Vapeur Professionnel",
-    "category": 
+]

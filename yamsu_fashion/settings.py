@@ -4,6 +4,7 @@ Django settings for yamsu_fashion project.
 
 from pathlib import Path
 
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -11,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-89)))k7x_n-3@$f41a#6e(&t#pq!=t(kmp2f#dn@j0l+)egn)@'
 
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -27,6 +28,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Cloudinary (gardé pour plus tard)
+    'cloudinary',
+    'cloudinary_storage',
+
+    # Application boutique
     'shop',
 
 ]
@@ -55,7 +61,7 @@ MIDDLEWARE = [
 ]
 
 
-# URL CONFIG
+# URL CONFIGURATION
 
 ROOT_URLCONF = 'yamsu_fashion.urls'
 
@@ -115,19 +121,23 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
 
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
 
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
 
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.CommonPasswordValidator',
     },
 
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME':
+        'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 
 ]
@@ -144,7 +154,6 @@ USE_I18N = True
 USE_TZ = True
 
 
-
 # STATIC FILES
 
 STATIC_URL = '/static/'
@@ -152,29 +161,48 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
-
-# MEDIA FILES
+# MEDIA FILES (images produits)
 
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
+# CLOUDINARY CONFIGURATION
 
-# DJANGO 6 STORAGE CONFIGURATION
+CLOUDINARY_STORAGE = {
+
+    'CLOUD_NAME': 'roby6r',
+
+    'API_KEY': '461353639619412',
+
+    'API_SECRET': '6dQny8xDK-MKpkpniKQfiImb8Zg',
+
+}
+
+
+# STORAGE DJANGO 6
+
+# Pour le moment on utilise le stockage local
+# afin que les images fonctionnent sur localhost.
 
 STORAGES = {
 
     "default": {
+
         "BACKEND": "django.core.files.storage.FileSystemStorage",
+
     },
 
+
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+
+        "BACKEND":
+        "whitenoise.storage.CompressedManifestStaticFilesStorage",
+
     },
 
 }
-
 
 
 # DEFAULT PRIMARY KEY
