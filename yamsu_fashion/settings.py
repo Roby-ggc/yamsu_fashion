@@ -172,20 +172,20 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # CLOUDINARY CONFIGURATION
 
-CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+}
 
-if CLOUDINARY_URL:
-    cloudinary_url = urlparse(CLOUDINARY_URL)
+# Support CLOUDINARY_URL when separate variables are not configured. Explicit
+# variables take priority so an old URL cannot point images to another cloud.
+if not all(CLOUDINARY_STORAGE.values()) and os.getenv('CLOUDINARY_URL'):
+    cloudinary_url = urlparse(os.environ['CLOUDINARY_URL'])
     CLOUDINARY_STORAGE = {
         'CLOUD_NAME': cloudinary_url.hostname,
         'API_KEY': cloudinary_url.username,
         'API_SECRET': cloudinary_url.password,
-    }
-else:
-    CLOUDINARY_STORAGE = {
-        'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-        'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-        'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
     }
 
 cloudinary_enabled = all(CLOUDINARY_STORAGE.values())
