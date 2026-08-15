@@ -1,30 +1,492 @@
 [
-  {
-    "model": "shop.product",
-    "pk": 1,
-    "fields": {
-      "name": "Timberland",
-      "category": "Hommes",
-      "price": "15000.00",
-      "description": "Bottes Timberland 6-Inch Homme - Cuir Nubuck\nL'indemodable. Robuste, style et confortable.\nConcue en cuir nubuck impermeable avec coutures 100% etanches.\nCouleur : Jaune miel\nPointures disponibles : 40 au 45\nLivraison disponible partout.",
-      "image": "products/IMG-20260622-WA0173.jpg",
-      "sizes": "",
-      "stock": 72,
-      "available": true
-    }
-  },
-  {
-    "model": "shop.product",
-    "pk": 2,
-    "fields": {
-      "name": "Louis Vuitton",
-      "category": "Hommes",
-      "price": "13500.00",
-      "description": "Sneakers Louis Vuitton Homme - Noir et Blanc\nDesign premium et audacieux pour homme.\nCuir de qualite, semelle epaisse et confortable.\nPointures disponibles : 40 au 45\nLivraison disponible partout.",
-      "image": "products/IMG-20260718-WA0053.jpg",
-      "sizes": "",
-      "stock": 31,
-      "available": true
-    }
+{
+  "model": "shop.product",
+  "pk": 1,
+  "fields": {
+    "name": "Timberland",
+    "category": "Hommes",
+    "price": "15000.00",
+    "description": "Bottes Timberland 6-Inch Homme - Cuir Nubuck\nL'indemodable. Robuste, style et confortable.\nConcue en cuir nubuck impermeable avec coutures 100% etanches.\nCouleur : Jaune miel\nPointures disponibles : 40 au 45\nLivraison disponible partout.",
+    "image": "media/products/IMG-20260622-WA0173_oqlul6",
+    "sizes": "",
+    "stock": 72,
+    "available": true
   }
+},
+{
+  "model": "shop.product",
+  "pk": 2,
+  "fields": {
+    "name": "Louis Vuitton",
+    "category": "Hommes",
+    "price": "13500.00",
+    "description": "Sneakers Louis Vuitton Homme - Noir et Blanc\nDesign premium et audacieux pour homme.\nCuir de qualite, semelle epaisse et confortable.\nPointures disponibles : 40 au 45\nLivraison disponible partout.",
+    "image": "media/products/IMG-20260718-WA0053_lphefd",
+    "sizes": "",
+    "stock": 31,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 3,
+  "fields": {
+    "name": "Soulier",
+    "category": "Hommes",
+    "price": "8000.00",
+    "description": "Noir Motif Monogramme  \r\nElégance et raffinement pour l’homme moderne.  \r\nCuir verni brillant, détail boucle dorée, et motif monogramme stylé.  \r\nIdéals pour cérémonie, bureau, ou sortie chic. Confort et classe réunis.  \r\nCouleur : Noir  \r\nPointures disponibles : 40 au 45  \r\nLivraison disponible partout.",
+    "image": "media/products/IMG-20260613-WA0124_ycwwdb",
+    "sizes": "",
+    "stock": 74,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 4,
+  "fields": {
+    "name": "Talon",
+    "category": "Femmes",
+    "price": "13500.00",
+    "description": "Mules Femme à Talon Carré - Noir Strass  \r\nStyle et élégance pour vos sorties.  \r\nMatière velours, talon carré épais confortable, et détails strass sur la bride.  \r\nParfaites pour habiller une robe, un jean ou une tenue de soirée.  \r\nCouleur : Noir  \r\nPointures disponibles : 36 au 41  \r\nLivraison disponible partout.",
+    "image": "media/products/IMG-20260615-WA0154_y029pr",
+    "sizes": "",
+    "stock": 63,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 5,
+  "fields": {
+    "name": "Baggy Jeans",
+    "category": "Femmes",
+    "price": "10000.00",
+    "description": "Jean Femme Baggy Taille Haute - Bleu \r\nAdoptez la tendance du denim large avec ce jean femme baggy taille haute. Sa coupe droite et fluide galbe la taille tout en offrant un confort optimal toute la journée.\r\nLe délavage stratégique sur l'avant apporte une touche moderne et décontractée.\r\nParfait à associer avec un talon carré pour une sortie ou des baskets pour un style streetwear.",
+    "image": "media/products/IMG-20260615-WA0149_ddj8rv",
+    "sizes": "",
+    "stock": 110,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 6,
+  "fields": {
+    "name": "Fer à Repasser Vapeur Professionnel",
+    "category": "Électroménager",
+    "price": "10500.00",
+    "description": "Couleur : Blanc et Bleu Turquoise  \r\nType : Fer électrique filaire avec fonction vapeur  \r\nSemelle : Pointe fine pour repasser les coins et les boutons  \r\nRéservoir : Grande capacité pour repassage continu  \r\nRéglages : Température réglable pour coton, lin, soie, synthétique  \r\nIdéal pour : Chemises, boubous, uniformes, draps et tous types de tissus  \r\nRésultat : Repassage lisse, rapide et sans plis",
+    "image": "media/products/IMG-20260616-WA0012_dej28c",
+    "sizes": "",
+    "stock": 148,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 7,
+  "fields": {
+    "name": "Robe Fille Fleurie + Veste en Jean",
+    "category": "Enfants",
+    "price": "6500.00",
+    "description": "Robe Fille Fleurie avec Veste en Jean  \r\nAge : 2-5 ans  \r\nMatière robe : Tissu léger imprimé floral gris et blanc avec volants superposés  \r\nMatière veste : Jean denim bleu avec boutons dorés  \r\nDétails : Manches longues, col, poches, patch décoratif devant  \r\nStyle : Élégant et confortable pour fêtes, anniversaires et sorties  \r\nEntretien : Lavage à la main ou machine cycle doux",
+    "image": "media/products/WhatsApp_Image_2026-08-01_at_1.10.19_PM_ry4sz0",
+    "sizes": "",
+    "stock": 131,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 8,
+  "fields": {
+    "name": "Ensemble Fille 3 Pièces Jean + T-shirt",
+    "category": "Enfants",
+    "price": "11750.00",
+    "description": "Ensemble Fille 3 Pièces Jean + T-shirt  \r\nAge : 4-10 ans  \r\nComposition : Gilet en jean sans manches + Short en jean + T-shirt rose  \r\nMatière : Denim pour le gilet et short, coton pour le t-shirt  \r\nDétails gilet : Boutons devant, poches, broderies étoiles et imprimé fleur au dos  \r\nDétails short : Taille haute, poches cargo, décoration étoiles  \r\nDétails t-shirt : Col rond, imprimé floral coloré  \r\nStyle : Décontracté et tendance pour sorties et week-end  \r\nEntretien : Lavage machine à l’envers cycle délicat",
+    "image": "media/products/WhatsApp_Image_2026-08-01_at_1.12.11_PM_z0876e",
+    "sizes": "",
+    "stock": 108,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 9,
+  "fields": {
+    "name": "Robe Longue Femme Plissée Dégradé + Haut Corset",
+    "category": "Femmes",
+    "price": "9500.00",
+    "description": "Robe Longue Femme Plissée Dégradé + Haut Corset  \r\nMatière haut : Tissu brillant texturé effet corset  \r\nMatière jupe : Tissu plissé léger avec effet dégradé  \r\nCoupe : Épaules dégagées, manches bouffantes, taille cintrée  \r\nLongueur : Robe longue maxi fluide  \r\nCouleurs disponibles : Orange, Vert, Bleu Royal, Violet  \r\nStyle : Élégant et chic pour cérémonies, événements et soirées  \r\nEntretien : Lavage à la main, repassage doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.15.36_PM_fneczl",
+    "sizes": "",
+    "stock": 0,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 10,
+  "fields": {
+    "name": "Ensemble Homme 2 Pièces Jogging + Sweat à Capuche",
+    "category": "Hommes",
+    "price": "10000.00",
+    "description": "Ensemble Homme 2 Pièces Jogging + Sweat à Capuche  \r\nCouleur : Blanc  \r\nComposition : Sweat à capuche + Pantalon jogging  \r\nMatière : Tissu molletonné confortable et respirant  \r\nDétails : Capuche avec cordon, poche kangourou, logo griffure rouge sur poitrine et cuisse  \r\nCoupe : Jogging taille élastique avec cordon, bas de jambe resserré  \r\nStyle : Sportif et décontracté pour sport, maison et sorties casual  \r\nTailles : 6 tailles disponibles  \r\nEntretien : Lavage machine cycle doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.19.17_PM_1_iqinvt",
+    "sizes": "",
+    "stock": 184,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 11,
+  "fields": {
+    "name": "Ensemble Homme 2 Pièces Sweat \"PARIS\" + Jogging",
+    "category": "Hommes",
+    "price": "8500.00",
+    "description": "Ensemble Homme 2 Pièces Sweat \"PARIS\" + Jogging  \r\nCouleurs : Jaune + Noir  \r\nComposition : Sweat à capuche + Pantalon jogging  \r\nMatière : Tissu molletonné chaud et confortable  \r\nDétails : Capuche avec cordon, poche kangourou, imprimé \"PARIS 40 RUE DE SEVRES\" devant  \r\nCoupe : Jogging taille élastique avec cordon, bas de jambe resserré, imprimé \"PARIS\" sur la cuisse  \r\nStyle : Urbain et tendance pour sport, maison et sorties  \r\nTailles : 5 tailles disponibles  \r\nEntretien : Lavage machine cycle doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.19.17_PM_zmie3q",
+    "sizes": "",
+    "stock": 148,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 12,
+  "fields": {
+    "name": "Polo Homme Rayé Manches Courtes",
+    "category": "Hommes",
+    "price": "5500.00",
+    "description": "Polo Homme Rayé Manches Courtes  \r\nMatière : Tissu piqué respirant et confortable  \r\nCoupe : Col classique, manches courtes, 2 boutons  \r\nMotif : Rayures larges marron, beige et vert olive  \r\nDétails : Broderie logo cavalier sur la poitrine  \r\nStyle : Élégant et casual pour bureau, sorties et week-end  \r\nCouleurs disponibles : Plusieurs coloris disponibles  \r\nEntretien : Lavage machine cycle doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.18.27_PM_kc9dyq",
+    "sizes": "",
+    "stock": 111,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 13,
+  "fields": {
+    "name": "Ensemble Enfant 2 Pièces \"Los Angeles League\"",
+    "category": "Hommes",
+    "price": "10000.00",
+    "description": "Ensemble Enfant 2 Pièces \"Los Angeles League\"  \r\nCouleur : Abricot  \r\nComposition : Sweat à capuche + Pantalon jogging  \r\nMatière : Molleton doux et chaud  \r\nDétails sweat : Capuche, manches longues, imprimé \"Los Angeles LEAGUE\" devant  \r\nDétails jogging : Taille élastique avec cordon, poches, imprimé \"Los Angeles\" sur la cuisse, bas resserré  \r\nStyle : Confortable et tendance pour maison, école et sorties  \r\nTailles : 4 tailles disponibles  \r\nEntretien : Lavage machine cycle doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.16.36_PM_1_v2kbds",
+    "sizes": "",
+    "stock": 82,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 14,
+  "fields": {
+    "name": "Ensemble Homme 2 Pièces \"Chicago 27\"",
+    "category": "Hommes",
+    "price": "10000.00",
+    "description": "Ensemble Homme 2 Pièces \"Chicago 27\"  \r\nCouleur : Noir  \r\nComposition : Sweat à capuche + Pantalon jogging  \r\nMatière : Molleton épais et confortable  \r\nDétails sweat : Capuche avec cordon, poche kangourou, imprimé \"Chicago 27\" rouge et blanc devant  \r\nDétails jogging : Taille élastique avec cordon, poches, imprimé \"Chicago 27\" sur la cuisse, bas resserré  \r\nStyle : Sportif et urbain pour sport, maison et sorties  \r\nTailles : Plusieurs tailles disponibles  \r\nEntretien : Lavage machine cycle doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.16.35_PM_polww0",
+    "sizes": "",
+    "stock": 107,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 15,
+  "fields": {
+    "name": "Ensemble Femme 2 Pièces Chemise + Pantalon Large",
+    "category": "Femmes",
+    "price": "6500.00",
+    "description": "Ensemble Femme 2 Pièces Chemise + Pantalon Large  \r\nCouleurs : Chemise rose à fines rayures blanches + Pantalon fuchsia  \r\nMatière : Chemise en tissu fluide léger, pantalon en tissu structuré élégant  \r\nDétails chemise : Coupe oversize, col classique, manches 3/4, boutons, grand nœud fuchsia sur le côté  \r\nDétails pantalon : Taille haute, coupe large fluide, poches  \r\nStyle : Chic et moderne pour bureau, événements et sorties élégantes  \r\nTailles : Tailles disponibles du S au XL  \r\nEntretien : Lavage à la main ou cycle délicat, repassage doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.14.13_PM_1_rxrxvq",
+    "sizes": "",
+    "stock": 108,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 16,
+  "fields": {
+    "name": "Ensemble Femme 2 Pièces Chemise Rayée + Pantalon Large",
+    "category": "Femmes",
+    "price": "6500.00",
+    "description": "Ensemble Femme 2 Pièces Chemise Rayée + Pantalon Large  \r\nCouleurs : Chemise noir et blanc rayée + Pantalon noir  \r\nMatière : Chemise en tissu fluide léger, pantalon en tissu structuré élégant  \r\nDétails chemise : Coupe oversize, col classique, manches 3/4, boutons, grand nœud noir sur le côté  \r\nDétails pantalon : Taille haute, coupe large fluide, poches  \r\nStyle : Élégant et professionnel pour bureau, rendez-vous et événements  \r\nTailles : Tailles disponibles du S au XL  \r\nEntretien : Lavage à la main ou cycle délicat, repassage doux",
+    "image": "media/products/WhatsApp_Image_2026-08-04_at_12.14.12_PM_1_pcfhhv",
+    "sizes": "",
+    "stock": 99,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 17,
+  "fields": {
+    "name": "Baskets Homme Montantes Platform \"Urban Edge\"",
+    "category": "Hommes",
+    "price": "45000.00",
+    "description": "Baskets Homme Montantes Platform \"Urban Edge\"  \r\nCouleur : Noir + Blanc cassé  \r\nMatière : Simili cuir premium + Semelle épaisse en EVA  \r\nDétails : Tige montante, lacets épais beige, fermeture éclair latérale, surpiqûres contrastées, semelle platform chunky  \r\nStyle : Streetwear et tendance pour sorties, concerts et look urbain  \r\nPointures disponibles : 42 - 43 - 44 - 45  \r\nQualité : Original quality  \r\nEntretien : Essuyer avec un chiffon humide",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.29.03_PM_xwnkht",
+    "sizes": "",
+    "stock": 0,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 18,
+  "fields": {
+    "name": "Baskets Homme Chunky \"Wave Runner\"",
+    "category": "Hommes",
+    "price": "23000.00",
+    "description": "Baskets Homme Chunky \"Wave Runner\"  \r\nCouleurs disponibles : Noir/Blanc, Bleu/Jaune/Blanc, Rouge/Argent  \r\nMatière : Tissu mesh respirant + superpositions synthétiques + Semelle épaisse amortie  \r\nDétails : Design chunky moderne, lacets ronds épais, inserts en mesh, motifs géométriques, semelle \"wave\" confort  \r\nStyle : Sport, casual et tendance pour marche, sport et sorties  \r\nPointures disponibles : 41 - 42 - 43 - 44 - 45  \r\nQualité : 23k  \r\nEntretien : Lavage à la main, séchage à l'air libre",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.27.18_PM_cmeddd",
+    "sizes": "",
+    "stock": 50,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 19,
+  "fields": {
+    "name": "Baskets Homme Montantes \"Air Retro 5\" Gris Ice",
+    "category": "Hommes",
+    "price": "25000.00",
+    "description": "Baskets Homme Montantes \"Air Retro 5\" Gris Ice  \r\nCouleur : Gris / Blanc / Semelle Bleue translucide  \r\nMatière : Cuir synthétique + inserts mesh + Semelle amortie  \r\nDétails : Tige montante, lacets blancs, logo \"23\" sur le côté, détails dents de requin blancs, semelle extérieure bleue translucide, logo Jumpman à la languette  \r\nStyle : Basketball et streetwear pour sport, sorties et collection  \r\nPointures disponibles : 42 - 43 - 44 - 45 - 46  \r\nQualité : Original  \r\nRéférence : LV  \r\nEntretien : Essuyer avec un chiffon sec",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.27.17_PM_1_yfrm2g",
+    "sizes": "",
+    "stock": 64,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 20,
+  "fields": {
+    "name": "Bottines Homme Montantes Platform \"Trail Fox\"",
+    "category": "Hommes",
+    "price": "25000.00",
+    "description": "Bottines Homme Montantes Platform \"Trail Fox\"  \r\nCouleurs disponibles : Jaune/Noir, Noir, Gris  \r\nMatière : Daim synthétique + Semelle épaisse crantée antidérapante  \r\nDétails : Tige montante, lacets épais ronds, œillets métal, doublure intérieure chaude, logo tête de renard sur le côté, étiquette décorative renard, semelle platform chunky  \r\nStyle : Urbain et tendance pour hiver, sorties et look streetwear  \r\nPointures disponibles : 41 - 42 - 43 - 44 - 45 - 46  \r\nQualité : Original  \r\nEntretien : Brosser et essuyer avec un chiffon sec",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.27.17_PM_ylxruv",
+    "sizes": "",
+    "stock": 93,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 21,
+  "fields": {
+    "name": "Baskets Homme Basses \"Air Force Suède\" Marron",
+    "category": "Hommes",
+    "price": "25000.00",
+    "description": "Baskets Homme Basses \"Air Force Suède\" Marron  \r\nCouleur : Marron / Détails blanc  \r\nMatière : Nubuck/daim synthétique doux + Semelle en caoutchouc  \r\nDétails : Coupe basse, lacets épais marron, logo swoosh blanc contour, perforations à l'avant, languette blanche, semelle AIR confort  \r\nStyle : Casual et tendance pour quotidien, sorties et streetwear  \r\nPointures disponibles : 42 - 43 - 44 - 45 - 46  \r\nQualité : 25k  \r\nEntretien : Brosser doucement, éviter l'eau",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.04.42_PM_wmsdwv",
+    "sizes": "",
+    "stock": 0,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 22,
+  "fields": {
+    "name": "Baskets Homme/Femme Chunky Platform \"Lux Strass\" Blanc",
+    "category": "Hommes",
+    "price": "19000.00",
+    "description": "Baskets Homme/Femme Chunky Platform \"Lux Strass\" Blanc  \r\nCouleur : Blanc total  \r\nMatière : Simili cuir + Détails strass + Semelle épaisse en EVA  \r\nDétails : Lacets ronds épais blancs, inserts recouverts de strass brillants, logo doré sur la languette, semelle platform avec motif grec, coupe confort rembourrée  \r\nStyle : Luxe et tendance pour sorties, fêtes et look mode  \r\nPointures disponibles : 42 - 43 - 44 - 45 - 46 - 47  \r\nQualité : 19k  \r\nEntretien : Essuyer avec un chiffon humide",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.03.37_PM_radjjw",
+    "sizes": "",
+    "stock": 98,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 23,
+  "fields": {
+    "name": "Baskets Homme Chunky \"LV Runner Max\"",
+    "category": "Hommes",
+    "price": "29000.00",
+    "description": "Baskets Homme Chunky \"LV Runner Max\"  \r\nCouleurs disponibles : Noir Total, Blanc/Bleu Denim Monogram  \r\nMatière : Cuir synthétique + Tissu Monogram + Semelle épaisse amortie  \r\nDétails : Lacets épais, logo \"V\" doré sur la languette, détails \"LOUIS VUITTON\" sur le côté, semelle chunky sculptée, œillets renforcés, languette et talon avec tirette  \r\nStyle : Luxe et streetwear pour sorties, sport et look tendance  \r\nPointures disponibles : 42 - 43 - 44 - 45 - 46  \r\nQualité : 29k  \r\nEntretien : Essuyer avec un chiffon sec",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.02.12_PM_qz1yfk",
+    "sizes": "",
+    "stock": 0,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 24,
+  "fields": {
+    "name": "Baskets Unisexe Chunky \"Cloud Runner\"",
+    "category": "Hommes",
+    "price": "18000.00",
+    "description": "Baskets Unisexe Chunky \"Cloud Runner\"  \r\nCouleurs disponibles : Blanc Total, Noir Total  \r\nMatière : Tissu mesh respirant + Simili cuir + Semelle épaisse amortie  \r\nDétails : Design chunky moderne, lacets plats, inserts en mesh, semelle crantée confort, étiquette décorative sur les lacets, coupe légère et tendance  \r\nStyle : Casual et sport pour quotidien, marche et look streetwear  \r\nPointures disponibles : 38 - 39 - 40 - 41 - 42  \r\nQualité : Original quality  \r\nEntretien : Essuyer avec un chiffon humide",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_7.00.26_PM_wwlbmy",
+    "sizes": "",
+    "stock": 0,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 25,
+  "fields": {
+    "name": "Baskets Unisexe Chunky \"Cloud Runner\"",
+    "category": "Hommes",
+    "price": "18000.00",
+    "description": "Baskets Unisexe Chunky \"Cloud Runner\"  \r\nCouleurs disponibles : Blanc Total, Noir Total  \r\nMatière : Tissu mesh respirant + Simili cuir + Semelle épaisse amortie  \r\nDétails : Design chunky moderne, lacets plats, inserts en mesh, semelle crantée confort, étiquette décorative sur les lacets, coupe légère et tendance  \r\nStyle : Casual et sport pour quotidien, marche et look streetwear  \r\nPointures disponibles : 38 - 39 - 40 - 41 - 42  \r\nQualité : Original quality  \r\nEntretien : Essuyer avec un chiffon humide",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_6.59.35_PM_vokzt2",
+    "sizes": "",
+    "stock": 72,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 26,
+  "fields": {
+    "name": "Baskets Running Nike ZoomX",
+    "category": "Hommes",
+    "price": "23000.00",
+    "description": "Baskets Running Nike ZoomX  \r\nCouleur : Blanc / Rose / Orange / Jaune  \r\nMatière : Tissu mesh respirant + Semelle ZoomX amortie  \r\nDétails : Coupe légère, logo Nike noir sur le côté, logo sur la languette, inserts orange et rose, semelle épaisse avec technologie \"ZOOMX\", languette rembourrée, étiquette \"MOVE TO ZERO\"  \r\nStyle : Sport et running pour jogging, salle et quotidien  \r\nPointures disponibles : 32 - 33 - 34 - 35 - 36 - 37 - 38 - 39 - 40  \r\nMarque : Nike  \r\nQualité : Original quality  \r\nEntretien : Lavage à la main, séchage à l'air libre",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_6.58.21_PM_cwpu6j",
+    "sizes": "",
+    "stock": 92,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 27,
+  "fields": {
+    "name": "Baskets Homme Nike Air Force 1 \"Style Surpiqûres\"",
+    "category": "Hommes",
+    "price": "19000.00",
+    "description": "Baskets Homme Nike Air Force 1 \"Style Surpiqûres\"  \r\nCouleur : Noir / Gris  \r\nMatière : Daim synthétique + Cuir synthétique + Semelle en caoutchouc  \r\nDétails : Coupe basse, logo Nike swoosh gris, surpiqûres blanches contrastées, lacets épais noirs, détails imprimés sur les côtés, languette matelassée avec logo Nike, semelle blanche avec inscription \"AIR\"  \r\nStyle : Streetwear et tendance pour quotidien, sorties et look urbain  \r\nMarque : Nike  \r\nPointures disponibles : 42 - 43 - 44 - 45 - 46 - 47 - 48  \r\nQualité : Original quality  \r\nEntretien : Brosser doucement, essuyer avec un chiffon",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_6.55.32_PM_hv6ghg",
+    "sizes": "",
+    "stock": 27,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 28,
+  "fields": {
+    "name": "Timberland",
+    "category": "Hommes",
+    "price": "45000.00",
+    "description": "Bottes Homme Timberland Classic \"White Out\"  \r\nCouleur : Blanc Total  \r\nMatière : Cuir synthétique lisse + Semelle épaisse crantée  \r\nDétails : Coupe montante, lacets épais blancs, col rembourré confort, œillets et crochets métal, logo arbre doré sur le côté, étiquette Timberland, semelle antidérapante robuste  \r\nStyle : Casual et tendance pour hiver, streetwear et look mode  \r\nMarque : Timberland  \r\nPointures disponibles : 40 - 41 - 42 - 43 - 44 - 45 - 46  \r\nQualité : Original quality  \r\nEntretien : Essuyer avec un chiffon humide",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_6.54.19_PM_akpmyq",
+    "sizes": "",
+    "stock": 30,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 29,
+  "fields": {
+    "name": "Baskets Unisexe NY Monogram \"Chunky Light\"",
+    "category": "Hommes",
+    "price": "18000.00",
+    "description": "Baskets Unisexe NY Monogram \"Chunky Light\"  \r\nCouleurs disponibles : Blanc/Noir Monogram, Noir/Blanc Monogram, Blanc/Marron Monogram  \r\nMatière : Tissu imprimé monogram + Semelle légère amortie  \r\nDétails : Coupe basse, grand logo \"NY\" brodé sur le côté, lacets ronds, motif monogram sur toute la tige, tirette au talon, semelle souple confort  \r\nStyle : Casual et tendance pour quotidien, sorties et look streetwear  \r\nPointures : À préciser  \r\nQualité : 18k  \r\nEntretien : Essuyer avec un chiffon humide\r\n\r\nTu veux que j’ajoute une gamme de pointures spécifique ?",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_6.51.49_PM_akoaem",
+    "sizes": "",
+    "stock": 59,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 30,
+  "fields": {
+    "name": "Baskets Homme Nike Air Force 1 \"Triple White\"",
+    "category": "Hommes",
+    "price": "17000.00",
+    "description": "Baskets Homme Nike Air Force 1 \"Triple White\"  \r\nCouleur : Blanc Total  \r\nMatière : Cuir synthétique + Semelle en caoutchouc  \r\nDétails : Coupe basse classique, logo Nike swoosh blanc, perforations à l'avant, lacets plats blancs, étiquette \"AF1\" dorée sur les lacets, détail lacet rouge au talon, inscription \"AIR\" sur la semelle  \r\nStyle : Incontournable et tendance pour quotidien, sport et streetwear  \r\nPointures : À préciser   \r\nEntretien : Essuyer avec un chiffon humide",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_6.50.54_PM_dexcoy",
+    "sizes": "",
+    "stock": 135,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 31,
+  "fields": {
+    "name": "Ensemble Jogging Femme \"Alo Sport\" 2 Pièces",
+    "category": "Femmes",
+    "price": "14500.00",
+    "description": "Ensemble Jogging Femme \"Alo Sport\" 2 Pièces  \r\nCouleur : Noir / Liserés blancs  \r\nMatière : Polaire / Tissu sport doux et chaud  \r\nDétails : \r\n- *Veste* : Zip frontal, col polo, manches longues avec bandes blanches, logo \"alo\" brodé poitrine, coupe oversize confort\r\n- *Pantalon* : Taille élastique + cordon de serrage, coupe large/jogging, liserés blancs sur les côtés, logo \"alo\" sur la cuisse, poches  \r\nStyle : Sportwear et casual pour sport, maison, sorties détente  \r\nTailles : À préciser  \r\nEntretien : Lavage en machine à froid",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_2.43.41_PM_kf4eoz",
+    "sizes": "",
+    "stock": 136,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 32,
+  "fields": {
+    "name": "Ensemble Jogging Femme \"Alo Sport\" 2 Pièces",
+    "category": "Femmes",
+    "price": "14500.00",
+    "description": "Ensemble Jogging Femme \"Alo Sport\" 2 Pièces  \r\nCouleur : Rose poudré / Liserés blancs  \r\nMatière : Polaire / Tissu sport doux et chaud  \r\nDétails : \r\n- *Veste* : Zip frontal, col polo, manches longues avec bandes blanches, logo \"alo\" brodé poitrine, coupe oversize confort\r\n- *Pantalon* : Taille élastique + cordon de serrage, coupe large/jogging, liserés blancs sur les côtés, logo \"alo\" sur la cuisse, poches  \r\nStyle : Sportwear et casual pour sport, maison, sorties détente  \r\nTailles : À préciser  \r\nEntretien : Lavage en machine à froid",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_2.43.41_PM_1_krtcqj",
+    "sizes": "",
+    "stock": 110,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 33,
+  "fields": {
+    "name": "*Ensemble Jogging Femme \"Alo Sport\" 2 Pièces*",
+    "category": "Femmes",
+    "price": "14500.00",
+    "description": "Ensemble Jogging Femme \"Alo Sport\" 2 Pièces  \r\nCouleur : Rouge / Liserés blancs  \r\nMatière : Polaire / Tissu sport doux et chaud  \r\nDétails : \r\n- *Veste* : Zip frontal, col polo, manches longues avec bandes blanches, logo \"alo\" brodé poitrine, coupe oversize confort\r\n- *Pantalon* : Taille élastique + cordon de serrage, coupe large/jogging, liserés blancs sur les côtés, logo \"alo\" sur la cuisse, poches  \r\nStyle : Sportwear et casual pour sport, maison, sorties détente  \r\nTailles : À préciser  \r\nEntretien : Lavage en machine à froid",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_2.43.40_PM_ua3m8q",
+    "sizes": "",
+    "stock": 83,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 34,
+  "fields": {
+    "name": "Ensemble Jogging Femme \"Alo Sport\" 3 Pièces",
+    "category": "Femmes",
+    "price": "14000.00",
+    "description": "Ensemble Jogging Femme \"Alo Sport\" 3 Pièces  \r\nCouleur : Rose pâle  \r\nMatière : Polaire / Tissu sport doux et chaud  \r\nDétails : \r\n- *Haut* : Col polo, demi-zip, manches longues, logo \"alo\" brodé poitrine, coupe confort\r\n- *Pantalon* : Coupe large/jogging, taille élastique, logo \"alo\" sur la cuisse, poches\r\n- *Sac* : Banane assortie avec logo \"alo\"  \r\nStyle : Sportwear et casual chic pour sport, maison, sorties détente  \r\nTailles : À préciser  \r\nEntretien : Lavage en machine à froid",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_2.43.30_PM_kte13f",
+    "sizes": "",
+    "stock": 97,
+    "available": true
+  }
+},
+{
+  "model": "shop.product",
+  "pk": 35,
+  "fields": {
+    "name": "Combinaison Femme Évasée Col Halter",
+    "category": "Femmes",
+    "price": "6500.00",
+    "description": "Combinaison Femme Évasée \"Col Halter\"  \r\nCouleur : Blanc  \r\nMatière : Tissu fluide et structuré  \r\nDétails : Coupe sans manches col halter, encolure avec petite ouverture, taille marquée avec nœud/cinture, pantalon large et fluide, coupe élégante et confortable  \r\nStyle : Chic et élégant pour bureau, cérémonies, sorties et événements  \r\nTailles : À préciser  \r\nPrix : 6,500k  \r\nEntretien : Lavage à la main ou pressing",
+    "image": "media/products/WhatsApp_Image_2026-08-03_at_1.23.53_PM_cwr3hn",
+    "sizes": "",
+    "stock": 86,
+    "available": true
+  }
+}
 ]

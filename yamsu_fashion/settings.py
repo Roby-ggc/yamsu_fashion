@@ -2,7 +2,9 @@
 Django settings for yamsu_fashion project.
 """
 
+import os
 from pathlib import Path
+from urllib.parse import urlparse
 
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -170,26 +172,38 @@ MEDIA_ROOT = BASE_DIR / 'media'
 
 # CLOUDINARY CONFIGURATION
 
-CLOUDINARY_STORAGE = {
+CLOUDINARY_URL = os.getenv('CLOUDINARY_URL')
 
-    'CLOUD_NAME': 'roby6r',
+if CLOUDINARY_URL:
+    cloudinary_url = urlparse(CLOUDINARY_URL)
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': cloudinary_url.hostname,
+        'API_KEY': cloudinary_url.username,
+        'API_SECRET': cloudinary_url.password,
+    }
+else:
+    CLOUDINARY_STORAGE = {
+        'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
+        'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
+        'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+    }
 
-    'API_KEY': '461353639619412',
-
-    'API_SECRET': '6dQny8xDK-MKpkpniKQfiImb8Zg',
-
-}
+cloudinary_enabled = all(CLOUDINARY_STORAGE.values())
 
 
 # STORAGE DJANGO 6
 
-# Pour le moment on utilise le stockage local
-# afin que les images fonctionnent sur localhost.
+# Stockage local pour le développement : les produits existants pointent vers
+# media/products/, et Django les sert via MEDIA_URL lorsque DEBUG=True.
 
 STORAGES = {
 
     "default": {
-        "BACKEND": "cloudinary_storage.storage.MediaCloudinaryStorage",
+        "BACKEND": (
+            "cloudinary_storage.storage.MediaCloudinaryStorage"
+            if cloudinary_enabled
+            else "django.core.files.storage.FileSystemStorage"
+        ),
     },
 
     "staticfiles": {
