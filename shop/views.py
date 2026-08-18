@@ -711,28 +711,19 @@ def register(request):
             'password'
         )
 
-
         user = User.objects.create_user(
             username=username,
             password=password
         )
-
-
-        CustomerProfile.objects.create(
-            user=user
-        )
-
 
         login(
             request,
             user
         )
 
-
         return redirect(
             'home'
         )
-
 
 
     return render(
