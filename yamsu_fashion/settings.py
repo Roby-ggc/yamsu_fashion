@@ -12,7 +12,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY
 
-SECRET_KEY = 'django-insecure-89)))k7x_n-3@$f41a#6e(&t#pq!=t(kmp2f#dn@j0l+)egn)@'
+SECRET_KEY = os.environ.get(
+    'SECRET_KEY',
+    'django-insecure-fallback-key'
+)
 
 DEBUG = False
 
@@ -34,11 +37,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Cloudinary (gardé pour plus tard)
+    # Cloudinary
     'cloudinary',
     'cloudinary_storage',
 
-    # Application boutique
+    # Boutique
     'shop',
 
 ]
@@ -66,8 +69,6 @@ MIDDLEWARE = [
 
 ]
 
-
-# URL CONFIGURATION
 
 ROOT_URLCONF = 'yamsu_fashion.urls'
 
@@ -101,8 +102,6 @@ TEMPLATES = [
 
 ]
 
-
-# WSGI
 
 WSGI_APPLICATION = 'yamsu_fashion.wsgi.application'
 
@@ -167,65 +166,47 @@ STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
 
 
-# MEDIA FILES (images produits)
-
-MEDIA_URL = '/media/'
-
-MEDIA_ROOT = BASE_DIR / 'media'
-
-
-# CLOUDINARY CONFIGURATION
+# CLOUDINARY
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.getenv('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.getenv('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.getenv('CLOUDINARY_API_SECRET'),
+
+    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
+
+    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
+
+    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
+
 }
 
-# Support CLOUDINARY_URL when separate variables are not configured. Explicit
-# variables take priority so an old URL cannot point images to another cloud.
-if not all(CLOUDINARY_STORAGE.values()) and os.getenv('CLOUDINARY_URL'):
-    cloudinary_url = urlparse(os.environ['CLOUDINARY_URL'])
-    CLOUDINARY_STORAGE = {
-        'CLOUD_NAME': cloudinary_url.hostname,
-        'API_KEY': cloudinary_url.username,
-        'API_SECRET': cloudinary_url.password,
-    }
 
-cloudinary_enabled = all(CLOUDINARY_STORAGE.values())
-
-
-# STORAGE DJANGO 6
-
-# Stockage local pour le développement : les produits existants pointent vers
-# media/products/, et Django les sert via MEDIA_URL lorsque DEBUG=True.
+# STORAGES (Django 6)
 
 STORAGES = {
 
     "default": {
-        "BACKEND": (
-            "cloudinary_storage.storage.MediaCloudinaryStorage"
-            if cloudinary_enabled
-            else "django.core.files.storage.FileSystemStorage"
-        ),
+
+        "BACKEND":
+        "cloudinary_storage.storage.MediaCloudinaryStorage",
+
     },
 
     "staticfiles": {
+
         "BACKEND":
         "whitenoise.storage.CompressedManifestStaticFilesStorage",
+
     },
 
 }
+
+
+# AUTH
+
+LOGIN_REDIRECT_URL = '/'
+
+LOGOUT_REDIRECT_URL = '/'
 
 
 # DEFAULT PRIMARY KEY
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': os.environ.get('CLOUDINARY_CLOUD_NAME'),
-    'API_KEY': os.environ.get('CLOUDINARY_API_KEY'),
-    'API_SECRET': os.environ.get('CLOUDINARY_API_SECRET'),
-}
-
-DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
