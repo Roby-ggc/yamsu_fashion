@@ -1718,3 +1718,260 @@ nav a {
     color: orange;
 
 }
+/* =========================
+   MOBILE OPTIMISATION V3
+   YAMSU CHANCE FASHION
+========================= */
+
+
+@media(max-width:700px){
+
+
+body{
+    overflow-x:hidden;
+}
+
+
+/* HEADER MOBILE */
+
+header{
+
+    padding:15px 10px;
+
+}
+
+
+header img{
+
+    width:55px;
+    height:55px;
+
+}
+
+
+header h1{
+
+    font-size:18px;
+
+}
+
+
+
+
+/* MENU MOBILE */
+
+nav{
+
+    flex-direction:row;
+
+    justify-content:center;
+
+    gap:8px;
+
+    padding:10px 5px;
+
+}
+
+
+nav a{
+
+    font-size:12px;
+
+    padding:8px 10px;
+
+}
+
+
+
+
+/* CATEGORIES */
+
+.categories-menu{
+
+    gap:12px;
+
+    overflow-x:auto;
+
+    justify-content:flex-start;
+
+    white-space:nowrap;
+
+}
+
+
+.categories-menu a{
+
+    font-size:13px;
+
+}
+
+
+
+
+/* RECHERCHE */
+
+.search-box{
+
+    margin:15px 10px;
+
+}
+
+
+.search-box input{
+
+    width:75%;
+
+}
+
+
+
+
+/* HERO */
+
+.hero{
+
+    height:320px;
+
+    margin:10px;
+
+}
+
+
+.hero-overlay h1{
+
+    font-size:28px;
+
+}
+
+
+.hero-overlay p{
+
+    font-size:15px;
+
+}
+
+
+
+/* PRODUITS */
+
+.products{
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:12px;
+
+    padding:12px;
+
+}
+
+
+
+.card{
+
+    padding:10px;
+
+    border-radius:12px;
+
+}
+
+
+
+.card img{
+
+    height:150px;
+
+}
+
+
+
+.card h3{
+
+    font-size:14px;
+
+    min-height:40px;
+
+}
+
+
+
+.price{
+
+    font-size:16px;
+
+}
+
+
+
+.stock{
+
+    font-size:12px;
+
+}
+
+
+
+.button{
+
+    font-size:12px;
+
+    padding:8px 10px;
+
+}
+
+
+
+/* DETAIL PRODUIT */
+
+.product-detail{
+
+    margin:10px;
+
+    padding:15px;
+
+}
+
+
+.product-image-box img{
+
+    height:250px;
+
+}
+
+
+
+/* PANIER */
+
+.cart-card{
+
+    padding:15px;
+
+}
+
+
+
+.cart-image{
+
+    width:120px;
+
+    height:120px;
+
+}
+
+
+
+/* WHATSAPP */
+
+.whatsapp-float{
+
+    width:50px;
+
+    height:50px;
+
+    bottom:15px;
+
+    right:15px;
+
+}
+
+
+}
