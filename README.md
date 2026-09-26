@@ -1,68 +1,84 @@
-\# Yamsu Fashion 🛍️
+# Yamsu Chance Fashion
 
+Yamsu Chance Fashion is an e-commerce web application built with Django for presenting and selling fashion products and other categories.
 
+The project was developed as a real-world web application with product management, user accounts, shopping cart, orders and online payment integration.
 
-Yamsu Fashion est une plateforme e-commerce développée avec Django permettant de présenter et vendre des produits de mode et autres catégories.
+---
 
+## Features
 
+- Product management
+- Product categories
+- User registration and login
+- User profiles
+- Shopping cart
+- Product ordering
+- Django administration
+- Responsive interface
+- Online payment integration
+- Cloudinary for media storage
+- Deployment on Render
 
-\## ✨ Fonctionnalités
+### Product Categories
 
+- Men
+- Women
+- Children
+- Home Appliances
+- Other Products
 
+---
 
-\- Gestion des produits
+## Technologies
 
-\- Catégories :
+### Backend
 
-&#x20; - Hommes
+- Python
+- Django
 
-&#x20; - Femmes
+### Frontend
 
-&#x20; - Enfants
+- HTML
+- CSS
+- JavaScript
 
-&#x20; - Électroménager
+### Database
 
-&#x20; - Autres
+- SQLite
 
-\- Système d'inscription et connexion utilisateur
+### Services
 
-\- Profil utilisateur
+- Cloudinary
+- Render
+- Flutterwave
 
-\- Panier d'achat
+### Development Tools
 
-\- Commande des produits
+- Git
+- GitHub
 
-\- Interface administrateur Django
+---
 
+## Live Website
 
+The application is deployed and accessible online.
 
-\## 🛠️ Technologies utilisées
+**Live:**  
+https://yamsu-fashion.onrender.com
 
+---
 
+## Project Structure
 
-\- Python
-
-\- Django
-
-\- SQLite
-
-\- HTML
-
-\- CSS
-
-\- JavaScript
-
-
-
-\## 🚀 Installation
-
-
-
-Cloner le projet :
-
-
-
-```bash
-
-git clone https://github.com/Roby-ggc/yamsu\_fashion.git
-
+```text
+yamsu_fashion/
+│
+├── products/
+├── shop/
+├── yamsu_fashion/
+├── manage.py
+├── requirements.txt
+├── Procfile
+├── build.sh
+└── .gitignore
